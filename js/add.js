@@ -45,7 +45,7 @@ const resetForm = () => {
     setValue("#day", "1");
     setValue("#month", "Jan");
     setValue("#year", "2016");
-    setTextValue("#salary-output", "400000");
+    setTextValue(".salary-output", "400000");
 }
 
 const unsetSelectedValues = (propertyValue) => {
@@ -58,12 +58,12 @@ const unsetSelectedValues = (propertyValue) => {
 const setTextValue = (id, value) => {
     //not used anywhere!
     const element = document.querySelector(id);
-    element.textContent = value;
+    element.value = value;
 };
 
 const setValue = (id, value) => {
     const element = document.querySelector(id);
-    element.textContent = value;
+    element.value = value;
 };
 
 
