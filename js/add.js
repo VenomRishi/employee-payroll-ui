@@ -77,7 +77,7 @@ const createEmployeePayroll = () => {
     }
     employeePayroll.profilePic = getSelectedValues("[name=profile]").pop();
     employeePayroll.gender = getSelectedValues("[name=gender]").pop();
-    employeePayroll.department = getSelectedValues("[name=department]").pop();
+    employeePayroll.department = getSelectedValues("[name=department]");
     employeePayroll.salary = getInputValueById("#salary");
     employeePayroll.note = getInputValueById("#notes");
     let date =
