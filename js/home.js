@@ -34,7 +34,10 @@ const createInnerHtml = () => {
 }
 const getDeptHtml = (deptList) => {
     let deptHtml = '';
-
+    if(typeof deptList == 'string') {
+        deptHtml = `${deptHtml} <div class="dept-label">${deptList}</div>`
+        return deptHtml;
+    }
     for (const dept of deptList) {
         deptHtml = `${deptHtml} <div class="dept-label">${dept}</div>`
     }
