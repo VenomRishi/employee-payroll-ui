@@ -40,6 +40,14 @@ const getEmployeePayrollDataFromStorage = (index) => {
 
 const setRecords = (empPayroll) => {
     setValue("#name", empPayroll._name)
+    setValue("#salary", empPayroll._salary);
+    setValue("#notes", empPayroll._note);
+    setValue("#day", new Date(empPayroll._startDate).getDay());
+    setValue("#month", new Date(empPayroll._startDate).toLocaleString('default', { month: 'short' }));
+    setValue("#year", new Date(empPayroll._startDate).getFullYear());
+    setTextValue(".salary-output", empPayroll._salary);
+    document.getElementById(empPayroll._gender).checked = true;
+    empPayroll._department.forEach(dept=> document.getElementById(dept.toLowerCase()).checked = true);
 }
 
 const save = () => {
