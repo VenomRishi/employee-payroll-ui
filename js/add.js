@@ -1,3 +1,5 @@
+var empIndex;
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     const text = document.querySelector('#name');
@@ -23,7 +25,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
         output.textContent = salary.value;
     });
 
+    empIndex = new URLSearchParams(window.location.search).get('index');
+    const empPayroll = getEmployeePayrollDataFromStorage(parseInt(empIndex));
+
+    if(empPayroll) {
+        setRecords(empPayroll);
+    }
 });
+
+const getEmployeePayrollDataFromStorage = (index) => {
+    return localStorage.getItem('employeePayrollList') ?
+        JSON.parse(localStorage.getItem('employeePayrollList'))[index] : [];
+}
+
+const setRecords = (empPayroll) => {
+    setValue("#name", empPayroll._name)
+}
 
 const save = () => {
     try {
